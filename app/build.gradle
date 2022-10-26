@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs.kotlin"
+    id "kotlin-parcelize"
 }
 
 android {
@@ -17,6 +18,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", '"https://giphy.p.rapidapi.com/"'
+        buildConfigField "String", "API_KEY", '"j7ZDazcK1qALCHh6iDrZkUAH66G6jMjh"'
+        buildConfigField "String", "X_RAPIDAPI_KEY", '"6ce670f88cmshebd8f983236869cp193451jsn067ebd2a404e"'
+        buildConfigField "String", "X_RAPIDAPI_HOST", '"giphy.p.rapidapi.com"'
     }
 
     buildTypes {
@@ -50,17 +56,22 @@ dependencies {
 // architecture components
     def coreVersion = '1.7.0'
     def lifecycleVersion = '2.4.0'
+    def pagingVersion = '3.1.0'
     implementation "androidx.core:core-ktx:$coreVersion"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
 
     def retrofitVersion = '2.9.0'
     def okhttpLoggingInterceptorVersion = '4.9.0'
+    def moshiVersion = '1.12.0'
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
     implementation "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptorVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
@@ -73,5 +84,7 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
 
 }
