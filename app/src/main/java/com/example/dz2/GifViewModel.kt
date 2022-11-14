@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.dz2.networking.GifSearchResponse
+import com.example.dz2.networking.Gif
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 

@@ -1,7 +1,6 @@
 package com.example.dz2.networking
 
 import com.example.dz2.BuildConfig
-import com.example.dz2.Gif
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

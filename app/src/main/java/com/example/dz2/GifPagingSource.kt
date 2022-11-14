@@ -1,7 +1,9 @@
 package com.example.dz2
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.dz2.networking.Gif
 import com.example.dz2.networking.GifService
 import retrofit2.HttpException
 import java.io.IOException
@@ -20,6 +22,7 @@ class GifPagingSource(
 
         return try {
             val response = service.searchGifs(query, position * ITEMS_PER_PAGE, ITEMS_PER_PAGE)
+            Log.d("Response", response.toString())
             val gifs = response.data
             val nextKey = if (gifs.isEmpty()) {
                 null

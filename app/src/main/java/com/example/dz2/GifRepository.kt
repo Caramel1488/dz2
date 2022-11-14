@@ -1,11 +1,13 @@
 package com.example.dz2
 
+
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.example.dz2.networking.Gif
 import com.example.dz2.networking.GifService
 import kotlinx.coroutines.flow.Flow
-import retrofit2.http.Query
+
 
 class GifRepository(private val service: GifService) {
 
