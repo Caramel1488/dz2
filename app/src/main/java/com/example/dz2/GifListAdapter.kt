@@ -6,6 +6,10 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DecodeFormat
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 import com.example.dz2.databinding.ItemListGifLayoutBinding
 import com.example.dz2.networking.Gif
 
@@ -28,8 +32,17 @@ class GifListAdapter : PagingDataAdapter<Gif, GifListAdapter.GifHolder>(COMPARAT
 
         fun bind(gif: Gif) {
             val gifPath = gif.images.original.url
+            val requestOptions = RequestOptions()
+            requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE)
+            requestOptions.timeout(10000)
+            requestOptions.skipMemoryCache(true)
+            requestOptions.override(SIZE_ORIGINAL)
+            requestOptions.format(DecodeFormat.PREFER_RGB_565)
             Glide.with(itemView)
                 .load(gifPath)
+                .error(android.R.drawable.ic_delete)
+                .placeholder(android.R.drawable.ic_menu_gallery)
+                .apply(requestOptions)
                 .into(binding.imageView)
         }
 

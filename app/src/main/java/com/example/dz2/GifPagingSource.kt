@@ -22,7 +22,7 @@ class GifPagingSource(
 
         return try {
             val response = service.searchGifs(query, position * ITEMS_PER_PAGE, ITEMS_PER_PAGE)
-            Log.d("Response", response.toString())
+            Log.d("Response", response.pagination.toString())
             val gifs = response.data
             val nextKey = if (gifs.isEmpty()) {
                 null
@@ -31,7 +31,7 @@ class GifPagingSource(
             }
             LoadResult.Page(
                 data = gifs,
-                prevKey = if (position == GIF_STARTING_PAGE_INDEX) null else position - 1,
+                prevKey = if (position == GIF_STARTING_PAGE_INDEX) null else position,
                 nextKey = nextKey
             )
         }catch (exception: IOException){
