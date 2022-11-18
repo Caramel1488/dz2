@@ -32,17 +32,17 @@ class GifListAdapter : PagingDataAdapter<Gif, GifListAdapter.GifHolder>(COMPARAT
 
         fun bind(gif: Gif) {
             val gifPath = gif.images.original.url
-            val requestOptions = RequestOptions()
+            /*val requestOptions = RequestOptions()
             requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE)
             requestOptions.timeout(10000)
             requestOptions.skipMemoryCache(true)
             requestOptions.override(SIZE_ORIGINAL)
-            requestOptions.format(DecodeFormat.PREFER_RGB_565)
+            requestOptions.format(DecodeFormat.PREFER_RGB_565)*/
             Glide.with(itemView)
                 .load(gifPath)
                 .error(android.R.drawable.ic_delete)
                 .placeholder(android.R.drawable.ic_menu_gallery)
-                .apply(requestOptions)
+                //.apply(requestOptions)
                 .into(binding.imageView)
         }
 
