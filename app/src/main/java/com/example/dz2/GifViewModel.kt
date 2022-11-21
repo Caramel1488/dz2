@@ -68,14 +68,13 @@ class GifViewModel(
                 initialValue = UiState()
             )
 
-        accept = {action ->
+        accept = { action ->
             viewModelScope.launch { actionStateFlow.emit(action) }
         }
     }
 }
 
-sealed class UiAction(
-) {
+sealed class UiAction {
     data class Search(val query: String) : UiAction()
     data class Scroll(
         val currentQuery: String

@@ -18,7 +18,6 @@ class GifPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Gif> {
         val position = params.key ?: GIF_STARTING_PAGE_INDEX
-        val apiQuery = query
 
         return try {
             val response = service.searchGifs(query, position * ITEMS_PER_PAGE, ITEMS_PER_PAGE)

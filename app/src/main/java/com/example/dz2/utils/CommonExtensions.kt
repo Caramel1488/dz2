@@ -1,4 +1,4 @@
-package com.example.dz34.utils
+package com.example.dz2.utils
 
 import android.app.Activity
 import android.content.Context

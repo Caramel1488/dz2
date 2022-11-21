@@ -16,9 +16,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.dz2.databinding.MainFragmentLayoutBinding
 import com.example.dz2.networking.Gif
-import com.example.dz34.utils.autoCleared
-import com.google.android.flexbox.FlexDirection
-import com.google.android.flexbox.FlexboxLayoutManager
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
@@ -55,6 +52,8 @@ class MainFragment : Fragment(R.layout.main_fragment_layout) {
         )
 
         list.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
+
+
 
         bindSearch(
             uiState = uiState,
