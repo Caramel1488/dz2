@@ -18,7 +18,9 @@ package com.example.dz2
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.savedstate.SavedStateRegistryOwner
+import com.example.dz2.data.GifRepository
 import com.example.dz2.networking.GifService
+import com.example.dz2.ui.ViewModelFactory
 
 /**
  * Class that handles object creation.

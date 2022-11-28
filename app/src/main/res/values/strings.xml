@@ -3,4 +3,5 @@
     <string name="retry">Retry</string>
     <string name="search_hint">Search Gif</string>
     <string name="no_results">No results</string>
+    <string name="contentDescription">GIF</string>
 </resources>

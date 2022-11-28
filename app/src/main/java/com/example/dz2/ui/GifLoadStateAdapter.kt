@@ -1,4 +1,4 @@
-package com.example.dz2
+package com.example.dz2.ui
 
 import android.view.ViewGroup
 import androidx.paging.LoadState

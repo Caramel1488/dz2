@@ -1,4 +1,4 @@
-package com.example.dz2
+package com.example.dz2.ui
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -14,8 +14,10 @@ import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.dz2.*
 import com.example.dz2.databinding.MainFragmentLayoutBinding
-import com.example.dz2.networking.Gif
+import com.example.dz2.model.Gif
+import com.example.dz2.utils.toast
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
@@ -29,7 +31,9 @@ class MainFragment : Fragment(R.layout.main_fragment_layout) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = ViewModelProvider(this, Injection.provideViewModelFactory(owner = this))[GifViewModel::class.java]
+        val viewModel = ViewModelProvider(this,
+            Injection.provideViewModelFactory(owner = this)
+        )[GifViewModel::class.java]
 
         binding.bindState(
             uiState = viewModel.state,
@@ -160,11 +164,7 @@ class MainFragment : Fragment(R.layout.main_fragment_layout) {
                     ?: loadState.append as? LoadState.Error
                     ?: loadState.prepend as? LoadState.Error
                 errorState?.let {
-                    Toast.makeText(
-                        requireContext(),
-                        "\uD83D\uDE28 Wooops ${it.error}",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    toast("\uD83D\uDE28 Whoops ${it.error}")
                 }
             }
         }

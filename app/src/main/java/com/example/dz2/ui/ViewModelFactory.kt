@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.dz2
+package com.example.dz2.ui
 
 import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
+import com.example.dz2.data.GifRepository
 
 /**
  * Factory for ViewModels

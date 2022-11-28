@@ -1,10 +1,11 @@
-package com.example.dz2
+package com.example.dz2.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dz2.R
 import com.example.dz2.databinding.GifLoadStateFooterViewItemBinding
 
 class GifLoadStateViewHolder(

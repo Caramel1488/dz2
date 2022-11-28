@@ -1,11 +1,12 @@
-package com.example.dz2
+package com.example.dz2.ui
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.dz2.networking.Gif
+import com.example.dz2.data.GifRepository
+import com.example.dz2.model.Gif
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 

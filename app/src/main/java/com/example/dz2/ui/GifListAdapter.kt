@@ -1,4 +1,4 @@
-package com.example.dz2
+package com.example.dz2.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,8 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DecodeFormat
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
 import com.example.dz2.databinding.ItemListGifLayoutBinding
-import com.example.dz2.networking.Gif
+import com.example.dz2.model.Gif
 
 class GifListAdapter : PagingDataAdapter<Gif, GifListAdapter.GifHolder>(COMPARATOR) {
 

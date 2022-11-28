@@ -1,4 +1,4 @@
-package com.example.dz2.networking
+package com.example.dz2.model
 
 import com.google.gson.annotations.SerializedName
 
